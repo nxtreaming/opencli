@@ -112,6 +112,9 @@ opencli bilibili hot -v         # Verbose: show pipeline steps
 
 ## 🧠 AI Agent Workflow
 
+> [!IMPORTANT]
+> AI Agent 创建新适配器时，**必须先阅读 [CLI-CREATOR.md](./CLI-CREATOR.md)**，其中包含完整的浏览器探索工作流、认证策略决策树和调试指南。
+
 ```bash
 # 1. Deep Explore — discover APIs, infer capabilities, detect framework
 opencli explore https://example.com --site mysite
@@ -134,7 +137,8 @@ Explore outputs to `.opencli/explore/<site>/`:
 
 ## 🔧 Create New Commands
 
-See **[CLI-CREATOR.md](./CLI-CREATOR.md)** for the full adapter guide (YAML pipeline + TypeScript).
+> [!CAUTION]
+> **🚨 必须先阅读 [CLI-CREATOR.md](./CLI-CREATOR.md)！** 它是适配器开发的完全指南，包含 API 发现工作流、5 级认证策略、平台 SDK 参考、YAML/TS 选择决策树、`tap` 调试流程和常见陷阱。**跳过此文档直接写代码会导致大量可避免的错误。**
 
 ## Releasing New Versions
 

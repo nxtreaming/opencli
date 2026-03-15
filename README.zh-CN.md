@@ -113,6 +113,9 @@ opencli bilibili hot -v         # 详细模式：展示 pipeline 每步数据
 
 ## 🧠 AI Agent 工作流
 
+> [!IMPORTANT]
+> AI Agent 创建新适配器时，**必须先阅读 [CLI-CREATOR.md](./CLI-CREATOR.md)**，其中包含完整的浏览器探索工作流、认证策略决策树和调试指南。
+
 ```bash
 # 1. Deep Explore — 网络拦截 → 响应分析 → 能力推理 → 框架检测
 opencli explore https://example.com --site mysite
@@ -135,7 +138,8 @@ opencli cascade https://api.example.com/data
 
 ## 🔧 创建新命令
 
-查看 **[CLI-CREATOR.md](./CLI-CREATOR.md)** 了解完整的适配器开发指南（YAML pipeline + TypeScript）。
+> [!CAUTION]
+> **🚨 必须先阅读 [CLI-CREATOR.md](./CLI-CREATOR.md)！** 它是适配器开发的完全指南，包含 API 发现工作流、5 级认证策略、平台 SDK 参考、YAML/TS 选择决策树、`tap` 调试流程和常见陷阱。**跳过此文档直接写代码会导致大量可避免的错误。**
 
 ## 版本发布
 

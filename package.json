@@ -1,6 +1,6 @@
 {
   "name": "@jackwener/opencli",
-  "version": "0.7.6",
+  "version": "0.7.7",
   "publishConfig": {
     "access": "public"
   },
@@ -17,8 +17,8 @@
     "dev": "tsx src/main.ts",
     "build": "tsc && npm run clean-yaml && npm run copy-yaml && npm run build-manifest",
     "build-manifest": "node dist/build-manifest.js",
-    "clean-yaml": "node -e \"const{readdirSync:r,rmSync:d,existsSync:e,statSync:s}=require('fs'),p=require('path');function w(dir){if(!e(dir))return;for(const f of r(dir)){const fp=p.join(dir,f);s(fp).isDirectory()?w(fp):/\\.ya?ml$/.test(f)&&d(fp)}}w('dist/clis')\"",
-    "copy-yaml": "node -e \"const{readdirSync:r,copyFileSync:c,mkdirSync:m,existsSync:e,statSync:s}=require('fs'),p=require('path');function w(src,dst){if(!e(src))return;for(const f of r(src)){const sp=p.join(src,f),dp=p.join(dst,f);s(sp).isDirectory()?w(sp,dp):/\\.ya?ml$/.test(f)&&(m(p.dirname(dp),{recursive:!0}),c(sp,dp))}}w('src/clis','dist/clis')\"",
+    "clean-yaml": "node scripts/clean-yaml.cjs",
+    "copy-yaml": "node scripts/copy-yaml.cjs",
     "start": "node dist/main.js",
     "postinstall": "node scripts/postinstall.js || true",
     "typecheck": "tsc --noEmit",

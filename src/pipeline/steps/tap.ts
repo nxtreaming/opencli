@@ -13,7 +13,7 @@ import type { IPage } from '../../types.js';
 import { render } from '../template.js';
 import { generateTapInterceptorJs } from '../../interceptor.js';
 
-export async function stepTap(page: IPage, params: any, data: any, args: Record<string, any>): Promise<any> {
+export async function stepTap(page: IPage | null, params: any, data: any, args: Record<string, any>): Promise<any> {
   const cfg = typeof params === 'object' ? params : {};
   const storeName = String(render(cfg.store ?? '', { args, data }));
   const actionName = String(render(cfg.action ?? '', { args, data }));
@@ -96,5 +96,5 @@ export async function stepTap(page: IPage, params: any, data: any, args: Record<
     }
   `;
 
-  return page.evaluate(js);
+  return page!.evaluate(js);
 }

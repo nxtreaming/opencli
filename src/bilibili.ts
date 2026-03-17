@@ -56,7 +56,7 @@ export async function wbiSign(
   const mixinKey = getMixinKey(imgKey, subKey);
   const wts = Math.floor(Date.now() / 1000);
   const sorted: Record<string, string> = {};
-  const allParams = { ...params, wts: String(wts) };
+  const allParams: Record<string, any> = { ...params, wts: String(wts) };
   for (const key of Object.keys(allParams).sort()) {
     sorted[key] = String(allParams[key]).replace(/[!'()*]/g, '');
   }
